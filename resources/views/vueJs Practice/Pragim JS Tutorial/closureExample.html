@@ -1,0 +1,37 @@
+<!doctype html>
+
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+</head>
+
+<body>
+    <!--
+
+    Closure is an inner function that has access to the other outer function's variables in addition to it's own variablesa
+     and global variables. The inner function hass access not only to the other function's variables, but also to the other function's parameters. You create a closure by adding a function inside another function.
+-->
+    <input type="button" value='Click Me' onclick="alert(incrementClickCount());">
+
+    <script>
+        var incrementClickCount = (function() {
+            //wala magkakaroon ng access sa clickCoumt
+            var clickCount = 0;
+            return function() {
+                //yung inner function na to magkakaroon ng access sa outer function
+                return ++clickCount;
+            }
+        })();
+    </script>
+
+</body>
+
+</html>

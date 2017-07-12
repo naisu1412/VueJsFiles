@@ -1,0 +1,45 @@
+
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+    <div id="app-3">   
+     
+    <p v-for='todo in todos'> {{ todo.text }} </p> 
+    
+    
+    </div>
+
+  <script src="https://unpkg.com/vue@2.3.4"></script>
+    
+    <script>
+      var sample = new Vue({
+            el: '#app-3',
+            data:{
+                todos:[
+                    {text: 'Learn Javascript'},
+                    {text: 'Learn Vue'},
+                    {text: 'Build Something Awesome'}
+                ]
+            }
+      })
+    </script>
+
+</body>
+</html>

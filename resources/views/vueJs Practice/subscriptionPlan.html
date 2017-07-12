@@ -1,0 +1,71 @@
+<!doctype html>
+
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+    <div id="app">
+        <div v-for='plan in plans'>
+            <!-- yung colon ay shorthand lang para mag bind -->
+            <plan :plan='plan' :active.sync='active'> </plan>
+        </div>
+    </div>
+
+    <template id='plan-template'>
+        <div>
+            <span> {{plan.name}} </span>
+            <span> {{plan.price}}/month </span>
+            <button @click='setActivePlan'> Upgrade </button>
+        </div>
+
+    </template>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.1/vue.js"></script>
+
+    <script>
+        new Vue({
+            el: ' #app ',
+            data: {
+                plans: [{
+                        name: 'Enterprise ',
+                        price: 100
+                    }, {
+                        name: 'Pro ',
+                        price: 50
+                    }, {
+                        name: 'Personal ',
+                        price: 10
+                    }, {
+                        name: 'Free ',
+                        price: 0
+                    },
+
+                ]
+            },
+            components: {
+                plan: {
+                    template: '#plan-template',
+                    props: ['plan', 'active'],
+                    methods: {
+                        setActivePlan: function() {
+
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

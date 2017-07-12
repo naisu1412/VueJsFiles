@@ -1,0 +1,57 @@
+<!doctype html>
+
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+    <div id="app">
+        <counter></counter>
+        <counter></counter>
+    </div>
+
+    <template id='counter-template'>
+        <p> sample </p>
+        <button @click='count += 1' type="submit">Increment {{ count }}</button>
+    </template>
+
+
+
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.1/vue.js"></script>
+    <script>
+        //custom tag
+        //gumawa ng instance
+        Vue.component('counter', {
+            //declare ang template
+            template: '#counter-template',
+            //gawa ng function
+            data: function() {
+                return {
+                    count: 0
+                };
+            }
+        });
+
+        new Vue({
+            el: '#app'
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+</head>
+
+<body>
+    <!--
+        1st Example counting and printing the number of arguments
+        function printArgs() { document.write('Args Count = ' + arguments.length + '<br/>'); for (var i = 0; i
+    < arguments.length; i++) { document.write( 'argument ' + i + ' = ' + arguments[i] + '<br>'); } document.write( '<br>'); } printArgs(); printArgs(1,
+        23, 4); printArgs( 'a', 'c', 'b'); -->
+    <!-- JS argument objects-->
+
+
+    <!--
+>    marurun mo lang ang arguments sa loob ng function
+>    di array ang argument kahit na pwede mo syang iindex arrayLength lang din ang propery na meron sya.
+ 
+    -->
+    <script>
+        function addNumbers() {
+            var sum = 0;
+            document.write('Count of Numbers = ' + arguments.length + '<br>');
+            for (var i = 0; i < arguments.length; i++) {
+                sum = sum + arguments[i];
+            }
+            document.write('sum of Numbers = ' + sum + '<br><br>');
+        }
+
+        function printNumbers() {
+            //pde mo rin gamitin to [] pamalit sa Array.prototype
+            var argsArray = Array.prototype.slice.call(arguments);
+            argsArray.sort();
+            document.write(argsArray);
+        }
+
+        printNumbers(50, 30, 20);
+    </script>
+
+</body>
+
+</html>
